@@ -1,8 +1,8 @@
 Gomematic: SDK for Python
 =========================
 
-.. image:: http://github.dronehippie.de/api/badges/gomematic/gomematic-python/status.svg
-    :target: http://github.dronehippie.de/gomematic/gomematic-python
+.. image:: http://drone.gomematic.tech/api/badges/gomematic/gomematic-python/status.svg
+    :target: http://drone.gomematic.tech/gomematic/gomematic-python
 
 .. image:: https://badge.waffle.io/gomematic/gomematic-api.svg?label=ready&title=Ready
     :target: http://waffle.io/gomematic/gomematic-api
