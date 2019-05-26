@@ -1,7 +1,6 @@
 # coding: utf-8
 
 # flake8: noqa
-
 """
     Gomematic OpenAPI
 
@@ -14,23 +13,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0-alpha1"
-
-# import apis into sdk package
-from gomematic.api.auth_api import AuthApi
-from gomematic.api.profile_api import ProfileApi
-from gomematic.api.team_api import TeamApi
-from gomematic.api.user_api import UserApi
-
-# import ApiClient
-from gomematic.api_client import ApiClient
-from gomematic.configuration import Configuration
-from gomematic.exceptions import OpenApiException
-from gomematic.exceptions import ApiTypeError
-from gomematic.exceptions import ApiValueError
-from gomematic.exceptions import ApiKeyError
-from gomematic.exceptions import ApiException
-# import models into sdk package
+# import models into model package
 from gomematic.models.auth_token import AuthToken
 from gomematic.models.auth_verify import AuthVerify
 from gomematic.models.inline_object import InlineObject
@@ -40,4 +23,3 @@ from gomematic.models.team_user import TeamUser
 from gomematic.models.team_user_params import TeamUserParams
 from gomematic.models.user import User
 from gomematic.models.user_team_params import UserTeamParams
-
