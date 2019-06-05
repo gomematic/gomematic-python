@@ -14,12 +14,15 @@
 from __future__ import absolute_import
 
 # import models into model package
+from gomematic.models.auth_login import AuthLogin
 from gomematic.models.auth_token import AuthToken
 from gomematic.models.auth_verify import AuthVerify
-from gomematic.models.inline_object import InlineObject
+from gomematic.models.general_error import GeneralError
 from gomematic.models.profile import Profile
 from gomematic.models.team import Team
 from gomematic.models.team_user import TeamUser
 from gomematic.models.team_user_params import TeamUserParams
 from gomematic.models.user import User
 from gomematic.models.user_team_params import UserTeamParams
+from gomematic.models.validation_error import ValidationError
+from gomematic.models.validation_error_errors import ValidationErrorErrors

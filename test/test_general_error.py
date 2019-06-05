@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import unittest
 
 import gomematic
-from gomematic.models.inline_object import InlineObject  # noqa: E501
+from gomematic.models.general_error import GeneralError  # noqa: E501
 from gomematic.rest import ApiException
 
 
-class TestInlineObject(unittest.TestCase):
-    """InlineObject unit test stubs"""
+class TestGeneralError(unittest.TestCase):
+    """GeneralError unit test stubs"""
 
     def setUp(self):
         pass
@@ -28,10 +28,10 @@ class TestInlineObject(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineObject(self):
-        """Test InlineObject"""
+    def testGeneralError(self):
+        """Test GeneralError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = gomematic.models.inline_object.InlineObject()  # noqa: E501
+        # model = gomematic.models.general_error.GeneralError()  # noqa: E501
         pass
 
 
