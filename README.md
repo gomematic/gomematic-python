@@ -1,7 +1,6 @@
 # Kleister: SDK for Python
 
-[![Build Status](http://cloud.drone.io/api/badges/gomematic/gomematic-python/status.svg)](http://cloud.drone.io/gomematic/gomematic-python)
-[![Stories in Ready](https://badge.waffle.io/gomematic/gomematic-api.svg?label=ready&title=Ready)](http://waffle.io/gomematic/gomematic-api)
+[![Build Status](https://cloud.drone.io/api/badges/gomematic/gomematic-python/status.svg)](https://cloud.drone.io/gomematic/gomematic-python)
 [![Join the Matrix chat at https://matrix.to/#/#gomematic:matrix.org](https://img.shields.io/badge/matrix-%23gomematic%3Amatrix.org-7bc9a4.svg)](https://matrix.to/#/#gomematic:matrix.org)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a9bb2351a4994cad95380830d7296b75)](https://www.codacy.com/app/gomematic/gomematic-python?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gomematic/gomematic-python&amp;utm_campaign=Badge_Grade)
 [![PyPI version](https://badge.fury.io/py/gomematic.svg)](https://badge.fury.io/py/gomematic)
