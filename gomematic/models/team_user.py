@@ -32,27 +32,47 @@ class TeamUser(object):
     """
     openapi_types = {
         'team_id': 'str',
+        'team': 'Team',
         'user_id': 'str',
-        'perm': 'str'
+        'user': 'User',
+        'perm': 'str',
+        'created_at': 'datetime',
+        'updated_at': 'datetime'
     }
 
     attribute_map = {
         'team_id': 'team_id',
+        'team': 'team',
         'user_id': 'user_id',
-        'perm': 'perm'
+        'user': 'user',
+        'perm': 'perm',
+        'created_at': 'created_at',
+        'updated_at': 'updated_at'
     }
 
-    def __init__(self, team_id=None, user_id=None, perm=None):  # noqa: E501
+    def __init__(self, team_id=None, team=None, user_id=None, user=None, perm=None, created_at=None, updated_at=None):  # noqa: E501
         """TeamUser - a model defined in OpenAPI"""  # noqa: E501
 
         self._team_id = None
+        self._team = None
         self._user_id = None
+        self._user = None
         self._perm = None
+        self._created_at = None
+        self._updated_at = None
         self.discriminator = None
 
         self.team_id = team_id
+        if team is not None:
+            self.team = team
         self.user_id = user_id
+        if user is not None:
+            self.user = user
         self.perm = perm
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
     def team_id(self):
@@ -78,6 +98,27 @@ class TeamUser(object):
         self._team_id = team_id
 
     @property
+    def team(self):
+        """Gets the team of this TeamUser.  # noqa: E501
+
+
+        :return: The team of this TeamUser.  # noqa: E501
+        :rtype: Team
+        """
+        return self._team
+
+    @team.setter
+    def team(self, team):
+        """Sets the team of this TeamUser.
+
+
+        :param team: The team of this TeamUser.  # noqa: E501
+        :type: Team
+        """
+
+        self._team = team
+
+    @property
     def user_id(self):
         """Gets the user_id of this TeamUser.  # noqa: E501
 
@@ -99,6 +140,27 @@ class TeamUser(object):
             raise ValueError("Invalid value for `user_id`, must not be `None`")  # noqa: E501
 
         self._user_id = user_id
+
+    @property
+    def user(self):
+        """Gets the user of this TeamUser.  # noqa: E501
+
+
+        :return: The user of this TeamUser.  # noqa: E501
+        :rtype: User
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """Sets the user of this TeamUser.
+
+
+        :param user: The user of this TeamUser.  # noqa: E501
+        :type: User
+        """
+
+        self._user = user
 
     @property
     def perm(self):
@@ -128,6 +190,48 @@ class TeamUser(object):
             )
 
         self._perm = perm
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this TeamUser.  # noqa: E501
+
+
+        :return: The created_at of this TeamUser.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this TeamUser.
+
+
+        :param created_at: The created_at of this TeamUser.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this TeamUser.  # noqa: E501
+
+
+        :return: The updated_at of this TeamUser.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this TeamUser.
+
+
+        :param updated_at: The updated_at of this TeamUser.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""

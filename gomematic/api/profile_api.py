@@ -37,7 +37,7 @@ class ProfileApi(object):
         self.api_client = api_client
 
     def show_profile(self, **kwargs):  # noqa: E501
-        """Retrieve an unlimited auth token  # noqa: E501
+        """Fetch profile details of the personal account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -57,7 +57,7 @@ class ProfileApi(object):
             return data
 
     def show_profile_with_http_info(self, **kwargs):  # noqa: E501
-        """Retrieve an unlimited auth token  # noqa: E501
+        """Fetch profile details of the personal account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -104,7 +104,7 @@ class ProfileApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/profile/self', 'GET',
@@ -190,7 +190,7 @@ class ProfileApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/profile/token', 'GET',
@@ -209,7 +209,7 @@ class ProfileApi(object):
             collection_formats=collection_formats)
 
     def update_profile(self, profile, **kwargs):  # noqa: E501
-        """Retrieve an unlimited auth token  # noqa: E501
+        """Update your own profile information  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -230,7 +230,7 @@ class ProfileApi(object):
             return data
 
     def update_profile_with_http_info(self, profile, **kwargs):  # noqa: E501
-        """Retrieve an unlimited auth token  # noqa: E501
+        """Update your own profile information  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -288,7 +288,7 @@ class ProfileApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/profile/self', 'PUT',

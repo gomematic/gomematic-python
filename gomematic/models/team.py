@@ -35,7 +35,8 @@ class Team(object):
         'slug': 'str',
         'name': 'str',
         'created_at': 'datetime',
-        'updated_at': 'datetime'
+        'updated_at': 'datetime',
+        'users': 'list[TeamUser]'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class Team(object):
         'slug': 'slug',
         'name': 'name',
         'created_at': 'created_at',
-        'updated_at': 'updated_at'
+        'updated_at': 'updated_at',
+        'users': 'users'
     }
 
-    def __init__(self, id=None, slug=None, name=None, created_at=None, updated_at=None):  # noqa: E501
+    def __init__(self, id=None, slug=None, name=None, created_at=None, updated_at=None, users=None):  # noqa: E501
         """Team - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -54,17 +56,18 @@ class Team(object):
         self._name = None
         self._created_at = None
         self._updated_at = None
+        self._users = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if slug is not None:
-            self.slug = slug
+        self.slug = slug
         self.name = name
         if created_at is not None:
             self.created_at = created_at
         if updated_at is not None:
             self.updated_at = updated_at
+        self.users = users
 
     @property
     def id(self):
@@ -126,8 +129,6 @@ class Team(object):
         :param name: The name of this Team.  # noqa: E501
         :type: str
         """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 
@@ -172,6 +173,27 @@ class Team(object):
         """
 
         self._updated_at = updated_at
+
+    @property
+    def users(self):
+        """Gets the users of this Team.  # noqa: E501
+
+
+        :return: The users of this Team.  # noqa: E501
+        :rtype: list[TeamUser]
+        """
+        return self._users
+
+    @users.setter
+    def users(self, users):
+        """Sets the users of this Team.
+
+
+        :param users: The users of this Team.  # noqa: E501
+        :type: list[TeamUser]
+        """
+
+        self._users = users
 
     def to_dict(self):
         """Returns the model properties as a dict"""

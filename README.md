@@ -58,6 +58,15 @@ import time
 import gomematic
 from gomematic.rest import ApiException
 
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 api = gomematic.AuthApi(gomematic.ApiClient(configuration))
 auth_login = gomematic.AuthLogin() # AuthLogin | The credentials to authenticate
@@ -78,10 +87,10 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthApi* | [**login_user**](docs/AuthApi.md#login_user) | **POST** /auth/login | Authenticate an user by credentials
 *AuthApi* | [**refresh_auth**](docs/AuthApi.md#refresh_auth) | **GET** /auth/refresh | Refresh an auth token before it expires
-*AuthApi* | [**verify_auth**](docs/AuthApi.md#verify_auth) | **GET** /auth/verify/{token} | Verify validity for an authentication token
-*ProfileApi* | [**show_profile**](docs/ProfileApi.md#show_profile) | **GET** /profile/self | Retrieve an unlimited auth token
+*AuthApi* | [**verify_auth**](docs/AuthApi.md#verify_auth) | **GET** /auth/verify | Verify validity for an authentication token
+*ProfileApi* | [**show_profile**](docs/ProfileApi.md#show_profile) | **GET** /profile/self | Fetch profile details of the personal account
 *ProfileApi* | [**token_profile**](docs/ProfileApi.md#token_profile) | **GET** /profile/token | Retrieve an unlimited auth token
-*ProfileApi* | [**update_profile**](docs/ProfileApi.md#update_profile) | **PUT** /profile/self | Retrieve an unlimited auth token
+*ProfileApi* | [**update_profile**](docs/ProfileApi.md#update_profile) | **PUT** /profile/self | Update your own profile information
 *TeamApi* | [**append_team_to_user**](docs/TeamApi.md#append_team_to_user) | **POST** /teams/{team_id}/users | Assign a user to team
 *TeamApi* | [**create_team**](docs/TeamApi.md#create_team) | **POST** /teams | Create a new team
 *TeamApi* | [**delete_team**](docs/TeamApi.md#delete_team) | **DELETE** /teams/{team_id} | Delete a specific team
@@ -121,12 +130,12 @@ Class | Method | HTTP request | Description
 ## Documentation For authorization
 
 
-## BasicAuth
+## Basic
 
 - **Type**: HTTP basic authentication
 
 
-## HeaderAuth
+## Header
 
 - **Type**: API key
 - **API key parameter name**: X-API-Key

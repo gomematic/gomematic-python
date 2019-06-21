@@ -39,7 +39,8 @@ class Profile(object):
         'admin': 'bool',
         'active': 'bool',
         'created_at': 'datetime',
-        'updated_at': 'datetime'
+        'updated_at': 'datetime',
+        'teams': 'list[TeamUser]'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class Profile(object):
         'admin': 'admin',
         'active': 'active',
         'created_at': 'created_at',
-        'updated_at': 'updated_at'
+        'updated_at': 'updated_at',
+        'teams': 'teams'
     }
 
-    def __init__(self, id=None, slug=None, username=None, password=None, email=None, admin=None, active=None, created_at=None, updated_at=None):  # noqa: E501
+    def __init__(self, id=None, slug=None, username=None, password=None, email=None, admin=None, active=None, created_at=None, updated_at=None, teams=None):  # noqa: E501
         """Profile - a model defined in OpenAPI"""  # noqa: E501
 
         self._id = None
@@ -66,15 +68,14 @@ class Profile(object):
         self._active = None
         self._created_at = None
         self._updated_at = None
+        self._teams = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if slug is not None:
-            self.slug = slug
+        self.slug = slug
         self.username = username
-        if password is not None:
-            self.password = password
+        self.password = password
         self.email = email
         if admin is not None:
             self.admin = admin
@@ -84,6 +85,7 @@ class Profile(object):
             self.created_at = created_at
         if updated_at is not None:
             self.updated_at = updated_at
+        self.teams = teams
 
     @property
     def id(self):
@@ -145,8 +147,6 @@ class Profile(object):
         :param username: The username of this Profile.  # noqa: E501
         :type: str
         """
-        if username is None:
-            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
 
         self._username = username
 
@@ -189,8 +189,6 @@ class Profile(object):
         :param email: The email of this Profile.  # noqa: E501
         :type: str
         """
-        if email is None:
-            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
         self._email = email
 
@@ -277,6 +275,27 @@ class Profile(object):
         """
 
         self._updated_at = updated_at
+
+    @property
+    def teams(self):
+        """Gets the teams of this Profile.  # noqa: E501
+
+
+        :return: The teams of this Profile.  # noqa: E501
+        :rtype: list[TeamUser]
+        """
+        return self._teams
+
+    @teams.setter
+    def teams(self, teams):
+        """Sets the teams of this Profile.
+
+
+        :param teams: The teams of this Profile.  # noqa: E501
+        :type: list[TeamUser]
+        """
+
+        self._teams = teams
 
     def to_dict(self):
         """Returns the model properties as a dict"""

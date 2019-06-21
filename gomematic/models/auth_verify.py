@@ -91,8 +91,6 @@ class AuthVerify(object):
         :param created_at: The created_at of this AuthVerify.  # noqa: E501
         :type: datetime
         """
-        if created_at is None:
-            raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
 
         self._created_at = created_at
 

@@ -116,7 +116,7 @@ class AuthApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/auth/login', 'POST',
@@ -202,7 +202,7 @@ class AuthApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/auth/refresh', 'GET',
@@ -220,37 +220,35 @@ class AuthApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def verify_auth(self, token, **kwargs):  # noqa: E501
+    def verify_auth(self, **kwargs):  # noqa: E501
         """Verify validity for an authentication token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.verify_auth(token, async_req=True)
+        >>> thread = api.verify_auth(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str token: A token that have to be checked (required)
         :return: AuthVerify
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.verify_auth_with_http_info(token, **kwargs)  # noqa: E501
+            return self.verify_auth_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.verify_auth_with_http_info(token, **kwargs)  # noqa: E501
+            (data) = self.verify_auth_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def verify_auth_with_http_info(self, token, **kwargs):  # noqa: E501
+    def verify_auth_with_http_info(self, **kwargs):  # noqa: E501
         """Verify validity for an authentication token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.verify_auth_with_http_info(token, async_req=True)
+        >>> thread = api.verify_auth_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str token: A token that have to be checked (required)
         :return: AuthVerify
                  If the method is called asynchronously,
                  returns the request thread.
@@ -258,7 +256,7 @@ class AuthApi(object):
 
         local_var_params = locals()
 
-        all_params = ['token']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -272,16 +270,10 @@ class AuthApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'token' is set
-        if ('token' not in local_var_params or
-                local_var_params['token'] is None):
-            raise ApiValueError("Missing the required parameter `token` when calling `verify_auth`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'token' in local_var_params:
-            path_params['token'] = local_var_params['token']  # noqa: E501
 
         query_params = []
 
@@ -296,10 +288,10 @@ class AuthApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
-            '/auth/verify/{token}', 'GET',
+            '/auth/verify', 'GET',
             path_params,
             query_params,
             header_params,

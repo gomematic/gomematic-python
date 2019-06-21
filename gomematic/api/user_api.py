@@ -124,7 +124,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}/teams', 'POST',
@@ -222,7 +222,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users', 'POST',
@@ -316,7 +316,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}', 'DELETE',
@@ -422,7 +422,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}/teams', 'DELETE',
@@ -516,7 +516,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}/teams', 'GET',
@@ -602,7 +602,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users', 'GET',
@@ -708,7 +708,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}/teams', 'PUT',
@@ -802,7 +802,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}', 'GET',
@@ -908,7 +908,7 @@ class UserApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['Basic', 'Header']  # noqa: E501
 
         return self.api_client.call_api(
             '/users/{user_id}', 'PUT',

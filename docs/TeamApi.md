@@ -22,15 +22,55 @@ Assign a user to team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+team_user = gomematic.TeamUserParams() # TeamUserParams | The team user data to assign
+
+try:
+    # Assign a user to team
+    api_response = api_instance.append_team_to_user(team_id, team_user)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->append_team_to_user: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 team_user = gomematic.TeamUserParams() # TeamUserParams | The team user data to assign
 
@@ -55,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -71,15 +111,54 @@ Create a new team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team = gomematic.Team() # Team | The team data to create
+
+try:
+    # Create a new team
+    api_response = api_instance.create_team(team)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->create_team: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team = gomematic.Team() # Team | The team data to create
 
 try:
@@ -102,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -118,15 +197,54 @@ Delete a specific team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+
+try:
+    # Delete a specific team
+    api_response = api_instance.delete_team(team_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->delete_team: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 
 try:
@@ -149,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -165,15 +283,55 @@ Remove a user from team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+team_user = gomematic.TeamUserParams() # TeamUserParams | The team user data to delete
+
+try:
+    # Remove a user from team
+    api_response = api_instance.delete_team_from_user(team_id, team_user)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->delete_team_from_user: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 team_user = gomematic.TeamUserParams() # TeamUserParams | The team user data to delete
 
@@ -198,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -214,15 +372,54 @@ Fetch all users assigned to team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+
+try:
+    # Fetch all users assigned to team
+    api_response = api_instance.list_team_users(team_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->list_team_users: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 
 try:
@@ -245,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -261,15 +458,53 @@ Fetch all available teams
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+
+try:
+    # Fetch all available teams
+    api_response = api_instance.list_teams()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->list_teams: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 
 try:
     # Fetch all available teams
@@ -288,7 +523,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -304,15 +539,55 @@ Update user perms for team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+team_user = gomematic.TeamUserParams() # TeamUserParams | The team user data to update
+
+try:
+    # Update user perms for team
+    api_response = api_instance.permit_team_user(team_id, team_user)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->permit_team_user: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 team_user = gomematic.TeamUserParams() # TeamUserParams | The team user data to update
 
@@ -337,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -353,15 +628,54 @@ Fetch a specific team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+
+try:
+    # Fetch a specific team
+    api_response = api_instance.show_team(team_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->show_team: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 
 try:
@@ -384,7 +698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 
@@ -400,15 +714,55 @@ Update a specific team
 
 ### Example
 
+* Basic Authentication (Basic):
 ```python
 from __future__ import print_function
 import time
 import gomematic
 from gomematic.rest import ApiException
 from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = gomematic.TeamApi()
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
+team_id = 'team_id_example' # str | A team UUID or slug
+team = gomematic.Team() # Team | The team data to update
+
+try:
+    # Update a specific team
+    api_response = api_instance.update_team(team_id, team)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->update_team: %s\n" % e)
+```
+
+* Api Key Authentication (Header):
+```python
+from __future__ import print_function
+import time
+import gomematic
+from gomematic.rest import ApiException
+from pprint import pprint
+configuration = gomematic.Configuration()
+# Configure HTTP basic authorization: Basic
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = gomematic.Configuration()
+# Configure API key authorization: Header
+configuration.api_key['X-API-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-API-Key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = gomematic.TeamApi(gomematic.ApiClient(configuration))
 team_id = 'team_id_example' # str | A team UUID or slug
 team = gomematic.Team() # Team | The team data to update
 
@@ -433,7 +787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Basic](../README.md#Basic), [Header](../README.md#Header)
 
 ### HTTP request headers
 

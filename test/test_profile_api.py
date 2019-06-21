@@ -31,7 +31,7 @@ class TestProfileApi(unittest.TestCase):
     def test_show_profile(self):
         """Test case for show_profile
 
-        Retrieve an unlimited auth token  # noqa: E501
+        Fetch profile details of the personal account  # noqa: E501
         """
         pass
 
@@ -45,7 +45,7 @@ class TestProfileApi(unittest.TestCase):
     def test_update_profile(self):
         """Test case for update_profile
 
-        Retrieve an unlimited auth token  # noqa: E501
+        Update your own profile information  # noqa: E501
         """
         pass
 

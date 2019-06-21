@@ -91,8 +91,6 @@ class AuthToken(object):
         :param expires_at: The expires_at of this AuthToken.  # noqa: E501
         :type: datetime
         """
-        if expires_at is None:
-            raise ValueError("Invalid value for `expires_at`, must not be `None`")  # noqa: E501
 
         self._expires_at = expires_at
 
